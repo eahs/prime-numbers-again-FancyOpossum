@@ -22,11 +22,39 @@ namespace PrimeNumbersAgain
 
             EvaluatePassingTime(timer.Elapsed.Seconds);
         }
+        
 
         static int FindNthPrime(int n)
         {
-            return 0;
+            //finding the nth prime number
+            if (n == 1)
+            {
+                return 2;
+            }
+            int num = n/2;
+            int count = 1;
+         while(count<n)
+         {
+                num += 2; //check only odd numbers
+                bool isPrime = true;
+            for(int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                if(num % i == 0)
+                {
+                    isPrime = false;
+                        break;
+                }
+            }
+            if(isPrime)
+            {
+                count++;
+            }
+            
+            }
+            return num;
+
         }
+        
 
         static int GetNumber()
         {
